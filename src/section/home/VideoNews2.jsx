@@ -1,4 +1,5 @@
 import H2 from '@/component/h2'
+import SmallNewCards from '@/component/new-careds/SmallNewCards'
 import Section from '@/component/section'
 import Span from '@/component/span'
 import TitleTag from '@/component/titletag'
@@ -14,7 +15,7 @@ export default function VideoNews2() {
             <Section banner={true} border={true}>
                 <div className='grid grid-cols-12 gap-y-6  gap-x-[10px]'>
                     <div className=' col-span-12 lg:col-span-9'>
-                        <div className="flex justify-between items-center border-b   border-[#707070D4]/80">
+                        <div className="flex justify-between items-center border-b   border-tertiary/50">
                             <TitleTag title="Web Stories" />
                             <div className="pr-3">
                         <button className="font-bold text-base text-primary">Read more</button>
@@ -45,28 +46,15 @@ export default function VideoNews2() {
                                     Inside Kumbh Mela – A Spiritual Journey
                                 </h1>
                             </div>
-                            {[1, 2, 3, 4, 5, 6, 7].map((items, index) => (
-                                <div
-                                    key={index}
-                                    className="flex gap-1 pb-3 cursor-pointer border-b row-span-1 border-black/80"
-                                >
-                                    <Image
-                                        height={199}
-                                        width={199}
-                                        src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
-                                        alt="banner"
-                                        className="w-[128px] h-[72px] object-cover"
-                                    />
-                                    <div className="flex-1 px-2">
-                                        <H2 text="Digital Rupee Explained In 30 Seconds!" />
-                                        <div className="flex items-center gap-1 mt-2">
-                                            <span>
-                                                <FaRegCirclePlay />
-                                            </span>
-                                            <Span text="2.9" />
-                                        </div>
-                                    </div>
-                                </div>
+
+{[1, 2, 3, 4, 5, 6, 7].map((_, index) => (
+                                <SmallNewCards
+                                    key={index} // Keep key here, not inside the component
+                                    image="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
+                                    title="How Online Learning is Changing Rural India"
+                                    date="17th Feb, 2025"
+                                    author="Rajesh Sharma"
+                                />
                             ))}
                         </div>
                     </div>
@@ -79,17 +67,17 @@ export default function VideoNews2() {
                             </div>
 
                             <div className="flex flex-col gap-y-[6px]">
-                                <div className='py-3 px-4 border border-tertiary/70 flex items-center gap-2.5'>
+                                <div className='py-3 px-4 border border-tertiary/50 flex items-center gap-2.5'>
                                     <span><FaThumbsUp /></span>
                                     <h1 className='text-xs font-medium'>Yes</h1>
                                 </div>
 
-                                <div className='py-3 px-4 border border-tertiary/70 flex items-center gap-2.5'>
+                                <div className='py-3 px-4 border border-tertiary/50 flex items-center gap-2.5'>
                                     <span><FaThumbsDown /></span>
                                     <h1 className='text-xs font-medium'>No</h1>
                                 </div>
 
-                                <div className='py-2 px-4 border border-tertiary/70 flex items-center gap-2.5'>
+                                <div className='py-2 px-4 border border-tertiary/50 flex items-center gap-2.5'>
                                     <span>🙄</span>
                                     <h1 className='text-xs font-medium'>I'm Not Sure</h1>
                                 </div>

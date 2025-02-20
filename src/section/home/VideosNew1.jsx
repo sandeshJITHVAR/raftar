@@ -39,10 +39,10 @@ export default function VideosNew1() {
             <Section banner={true} border={true}>
                 <div className='grid grid-cols-12 gap-y-6  gap-x-[10px]'>
                     <div className=' col-span-12 lg:col-span-9'>
-                        <div className="flex justify-between items-center border-b   border-[#707070D4]/80">
+                        <div className="flex justify-between items-center border-b   border-tertiary/50">
                             <TitleTag title="Video News" />
                             <div className="pr-3">
-                                <button className="font-bold text-base text-white">Read more</button>
+                                <button className="font-bold text-base text-primary">Read more</button>
                             </div>
                         </div>
 
@@ -73,7 +73,7 @@ export default function VideosNew1() {
                             {[1, 2, 3, 4, 5, 6, 7].map((items, index) => (
                                 <div
                                     key={index}
-                                    className="flex gap-1 pb-3 cursor-pointer border-b row-span-1 border-black/80"
+                                    className="flex gap-1 pb-3 cursor-pointer border-b row-span-1 border-tertiary/50"
                                 >
                                     <Image
                                         height={199}
@@ -98,7 +98,7 @@ export default function VideosNew1() {
 
                     <div className=' col-span-12 lg:col-span-3 flex flex-col gap-y-6'>
                         <div className='col-span-3 flex flex-col gap-y-4'>
-                            <div className="flex justify-between items-center border-b   border-[#707070D4]/80">
+                            <div className="flex justify-between items-center ">
                                 <TitleTag title="Connect With Us" />
                             </div>
  </div>

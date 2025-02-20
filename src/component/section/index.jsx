@@ -4,7 +4,7 @@ import React from 'react'
 export default function Section({ children, bgcolor, banner , border }) {
     return (
         <>
-            <section className={`${border ? 'border-t border-[#707070D4]/80':''}`} >
+            <section className={`${border ? 'border-t border-tertiary/50':''}`} >
                 <div style={{ backgroundColor: `${bgcolor}` }}>
                     <div className='max-w-[80rem] px-4 md:px-6 lg:px-8  mx-auto'>
                         <div className='py-8 ' >

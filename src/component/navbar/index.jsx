@@ -74,17 +74,8 @@ export default function Navbar() {
 
       <div className=' grid grid-cols-12 gap-4 py-4  px-4 md:px-6 lg:px-8 xl:px-0 max-w-[1440px] mx-auto'>
         <div className=' col-span-12 md:col-span-5 flex items-center '>
-          {/* <Image
-            src='/assets/logo/876eccd4f7c40a5dfbe862f3776296c2.png'
-            alt='banner'
-            className=" w-64 lg:w-full lg:h-[110px] object-cover "
-            width={200}
-            height={100}
-            priority /> */}
-
             <h1 className='text-primary text-[32px] font-bold flex gap-2.5'>
             Highlands
-
             <span className="text-black" style={{ fontFamily: 'Merriweather' }}>Today</span>
             </h1>
         </div>

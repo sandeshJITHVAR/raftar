@@ -41,9 +41,9 @@ export default function CityNews() {
             <Section  border={true}>
                 <div className='grid grid-cols-12 gap-y-6  gap-x-[10px]'>
                     <div className=' col-span-12 lg:col-span-9'>
-                        <div className="flex justify-between items-center border-b   border-[#707070D4]/80">
+                        <div className="flex justify-between items-center border-b   border-tertiary/50">
                             <TitleTag title="Web Stories" />
-                            <div className="pr-3 flex gap-7 text-base hidden lg:flex">
+                            <div className="pr-3  gap-7 text-base hidden lg:flex">
                                 <h1>Utter-Pradesh</h1>
                                 <h1>Jharkand</h1>
                                 <h1>Bihar</h1>
@@ -75,7 +75,7 @@ export default function CityNews() {
                                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((items, index) => (
                                     <div
                                         key={index}
-                                        className="flex gap-2 pb-3 cursor-pointer border-b border-black/80"
+                                        className="flex gap-2 pb-3 cursor-pointer border-b border-tertiary/50"
                                     >
                                         <Image
                                             height={199}
