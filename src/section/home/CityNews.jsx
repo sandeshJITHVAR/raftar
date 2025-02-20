@@ -82,7 +82,7 @@ export default function CityNews() {
                                             width={199}
                                             src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                             alt="banner"
-                                            className="w-[96px] h-[54px] object-cover"
+                                            className="w-[128px] h-[72px] lg:w-[96px] lg:h-[54px] object-cover"
                                         />
                                         <div className="flex-1">
                                             <H2 text="Mumbai Metro Expands: New Route to Ease Traffic Woes" />
