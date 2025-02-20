@@ -39,9 +39,11 @@ export default function WebStories() {
     return (
         <>
 
-            <div className="">
+      
 
-                <section className='py-8 px-4 md:px-6 lg:px-8 bg-primary ' >
+            <section className='px-4 md:px-6 lg:px-8 bg-primary ' >
+                <div className='max-w-[1440px] mx-auto py-8'>
+
                     <div className="flex justify-between items-center border-b pb-3  border-secondary">
                         <TitleTag title="Web stories" bgblack={true} />
                         <div className="pr-3">
@@ -78,7 +80,8 @@ export default function WebStories() {
                             <FaArrowRightLong />
                         </button>
                     </div>
-                </section>
+                </div>
+            </section>
 
                 <div className='py-3 px-4 md:px-6 lg:px-8 flex justify-center max-w-6xl mx-auto'>
                     <Image
@@ -89,7 +92,7 @@ export default function WebStories() {
                         height={100}
                         priority />
                 </div>
-            </div>
+            
         </>
     );
 }

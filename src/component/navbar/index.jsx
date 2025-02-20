@@ -37,47 +37,56 @@ export default function Navbar() {
   return (
     <header className="w-full">
 
-      <div className='hidden md:flex justify-between items-center px-4 md:px-6 lg:px-8 bg-primary  text-white'>
-        <div className="flex items-center gap-7">
-          <Link href="/" className="flex items-center gap-2">
-            <span className='text-xl'><CgMail /></span>
-            <h1 className='text-base'>Informeddaily@Support.Com</h1>
-          </Link>
-          <Link href="/" className="flex items-center gap-2">
-            <span className='text-base'><FiPhoneCall /></span>
-            <h1 className='text-base'>+91 647 538 21</h1>
-          </Link>
-        </div>
-        <div className="flex gap-1">
-          {socialMedia.map((social, index) => {
-            return (
-              <div key={index} className='border-l text-lg border-[#FFFFFFD4]/60 py-2.5 px-3'>
-                <Link
-                  href={social.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-80 cursor-pointer"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </Link>
-              </div>
-            );
-          })}
+      <div className='bg-primary  text-white'>
+        <div className='hidden md:flex justify-between items-center px-4 md:px-6 lg:px-8  xl:px-0 max-w-[1440px] mx-auto '>
+          <div className="flex items-center gap-7">
+            <Link href="/" className="flex items-center gap-2">
+              <span className='text-xl'><CgMail /></span>
+              <h1 className='text-base'>Informeddaily@Support.Com</h1>
+            </Link>
+            <Link href="/" className="flex items-center gap-2">
+              <span className='text-base'><FiPhoneCall /></span>
+              <h1 className='text-base'>+91 647 538 21</h1>
+            </Link>
+          </div>
+          <div className="flex gap-1">
+            {socialMedia.map((social, index) => {
+              return (
+                <div key={index} className='border-l text-lg border-[#FFFFFFD4]/60 py-2.5 px-3'>
+                  <Link
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 cursor-pointer"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
 
 
-      <div className=' grid grid-cols-12 gap-4 py-4  px-4 md:px-6 lg:px-8'>
+
+      <div className=' grid grid-cols-12 gap-4 py-4  px-4 md:px-6 lg:px-8 xl:px-0 max-w-[1440px] mx-auto'>
         <div className=' col-span-12 md:col-span-5 flex items-center '>
-          <Image
+          {/* <Image
             src='/assets/logo/876eccd4f7c40a5dfbe862f3776296c2.png'
             alt='banner'
             className=" w-64 lg:w-full lg:h-[110px] object-cover "
             width={200}
             height={100}
-            priority />
+            priority /> */}
+
+            <h1 className='text-primary text-[32px] font-bold flex gap-2.5'>
+            Highlands
+
+            <span className="text-black" style={{ fontFamily: 'Merriweather' }}>Today</span>
+            </h1>
         </div>
 
         <div className='col-span-7 h-full hidden md:flex items-center '>
@@ -91,8 +100,8 @@ export default function Navbar() {
         </div>
       </div>
 
-
-      <div className='flex justify-end lg:justify-between h-12 relative overflow-hidden items-center px-4 md:px-6 lg:px-8 bg-primary  text-white'>
+      <div className='bg-primary  text-white'>
+        <div className='flex justify-end lg:justify-between h-12 relative overflow-hidden items-center px-4 md:px-6 lg:px-8   xl:px-0 max-w-[1440px] mx-auto'>
           <ul className="hidden lg:flex">
             {menuItems.map((item, index) => (
               <li key={index}>
@@ -129,22 +138,19 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </div>
 
+      <div className='bg-primary  text-white  mt-2 '>
+        <div className='hidden md:flex  h-12 relative  items-center px-4 md:px-6 lg:px-8  xl:px-0 max-w-[1440px] mx-auto'>
+          <h1 className="border-l text-base bg-black  py-3 px-4 font-semibold border-[#FFFFFFD4]/50 block " >
+            BREAKING NEWSBREAKING NEWS
+          </h1>
 
-
-      <div className='hidden md:flex  h-12 relative  items-center px-4 md:px-6 lg:px-8 bg-primary mt-2 text-white'>
-       
-            <h1 className="border-l text-base bg-black  py-3 px-4 font-semibold border-[#FFFFFFD4]/50 block " >
-              BREAKING NEWSBREAKING NEWS
-            </h1>
-
-            <h1 className="border-l text-base py-3 px-4 font-normal border-[#FFFFFFD4]/50 block ">
-              Legal Battle Over Namadi Kanu's Detention
-            </h1>
-
-        
+          <h1 className="border-l text-base py-3 px-4 font-normal border-[#FFFFFFD4]/50 block ">
+            Legal Battle Over Namadi Kanu's Detention
+          </h1>
         </div>
-
+      </div>
     </header>
   );
 };

@@ -46,7 +46,7 @@ export default function MoreStories() {
             <Section banner={true} border={true}>
                 <div className="flex flex-col gap-y-6">
                     <div className='flex justify-center'>
-                        <TitleTag title="More Store" />
+                        <TitleTag title="More Stories" />
                     </div>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-y-5 gap-x-2">
                         {newsData.map((news, index) => (

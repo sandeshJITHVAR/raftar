@@ -8,7 +8,7 @@ export default function Bollywood() {
         <>
             <Section banner={true} border={true}>
                 <div className="flex justify-between items-center border-b   border-[#707070D4]/80">
-                    <TitleTag title="Web Stories" />
+                    <TitleTag title="Video News" />
                     <div className="pr-3">
                         <button className="font-bold text-base text-primary">Read more</button>
                     </div>
