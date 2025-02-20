@@ -49,13 +49,13 @@ export default function VideosNew1() {
                         <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-5 gap-x-3 gap-y-3 mt-5">
                             <div className="row-span-3 col-span-1 md:col-span-2 xl:col-span-1">
                                 <div className="relative">
-                                <Image
-                                    height={199}
-                                    width={199}
-                                    src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
-                                    alt="banner"
-                                    className="w-full h-[249px] object-cover z-0"
-                                />
+                                    <Image
+                                        height={199}
+                                        width={199}
+                                        src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
+                                        alt="banner"
+                                        className="w-full h-[249px] object-cover z-0"
+                                    />
                                     <div className="absolute z-10 w-full h-fit  backdrop-blur-[3px] bottom-0 left-0 text-white   px-4 py-2.5">
                                         <div className="flex items-center gap-2 ">
                                             <span>
@@ -65,7 +65,7 @@ export default function VideosNew1() {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <h1 className="text-[20px] font-bold mt-3">
                                     Inside Kumbh Mela – A Spiritual Journey
                                 </h1>
@@ -101,9 +101,9 @@ export default function VideosNew1() {
                             <div className="flex justify-between items-center ">
                                 <TitleTag title="Connect With Us" />
                             </div>
- </div>
-                            <div className="grid grid-cols-2 py-2.5 gap-y-4 gapx-3">
-
+                        </div>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-6'>
+                            <div className="h-fit grid grid-cols-2  gap-y-4 gap-x-3">
                                 {socialStats.map((stat, index) => (
                                     <div key={index} className="flex items-center gap-2.5">
                                         <div className={`p-2.5  rounded text-white ${stat.bgColor}`}>
@@ -133,7 +133,7 @@ export default function VideosNew1() {
                                     Subscribe
                                 </button>
                             </div>
-                        
+                        </div>
                     </div>
                 </div>
             </Section>

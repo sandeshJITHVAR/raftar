@@ -11,17 +11,13 @@ export default function Home() {
   return (
     <main className="">
        <HeroSection />
-      <WebStories />
+       <WebStories />
       <Categaroy />
       <VideosNew1 />
-      <Bollywood />
+       <Bollywood />
       <VideoNews2 />
-
-      
       <CityNews /> 
-
-
-      <MoreStories/>
-    </main>
+      <MoreStories/> 
+    </main> 
   );
 }

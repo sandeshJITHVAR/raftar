@@ -17,7 +17,7 @@ export default function Bollywood() {
                 </div>
 
                 <div className='py-2.5 mt-2.5 grid grid-cols-1 lg:grid-cols-3 gap-y-5 gap-[10px]'>
-                    <div className="h-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-y-6 gap-x-[6px]">
+                    <div className="h-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-y-6 gap-x-[10px] order-2 lg:order-1">
                         {[1, 2, 3, 4, 5, 6].map((_, index) => (
                             <div key={index} className="flex flex-col gap-y-3">
                                 <div className="relative">
@@ -26,7 +26,7 @@ export default function Bollywood() {
                                         width={199}
                                         src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                         alt="banner"
-                                        className="w-full h-[106px] object-cover z-0"
+                                        className="w-full md:h-[106px] object-cover z-0"
                                     />
                                     <div className="absolute z-10 w-full h-fit  backdrop-blur-[3px] bottom-0 left-0 text-white px-4 py-2.5 flex items-center gap-2">
                                         <span>
@@ -42,7 +42,7 @@ export default function Bollywood() {
                         ))}
                     </div>
 
-                    <div className="h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-6 gap-x-[6px]">
+                    <div className="h-fit grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-6 gap-x-[10px] order-1 lg:order-2">
                         {[1, 2,].map((_, index) => (
                             <div key={index} className="flex flex-col gap-y-4">
                                 <Image
@@ -50,7 +50,7 @@ export default function Bollywood() {
                                     width={199}
                                     src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                     alt="banner"
-                                    className="w-full h-[214px] object-cover z-0"
+                                    className="w-full md:h-[214px] object-cover z-0"
                                 />
                                 <h1 className="text-base font-semibold ">
                                     Deepika Padukone and Ranveer Singh Shine in Latest Love Saga
@@ -59,7 +59,7 @@ export default function Bollywood() {
                         ))}
                     </div>
 
-                    <div className="h-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-y-6 gap-x-[6px]">
+                    <div className="h-fit grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-y-6 gap-x-[10px] order-3">
                         {[1, 2, 3, 4, 5, 6].map((_, index) => (
                             <div key={index} className="flex flex-col gap-y-3">
                                 <div className="relative">
@@ -68,7 +68,7 @@ export default function Bollywood() {
                                         width={199}
                                         src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                         alt="banner"
-                                        className="w-full h-[106px] object-cover z-0"
+                                        className="w-full md:h-[106px] object-cover z-0"
                                     />
                                     <div className="absolute z-10 w-full h-fit  backdrop-blur-[3px] bottom-0 left-0 text-white px-4 py-2.5 flex items-center gap-2">
                                         <span>
