@@ -9,7 +9,8 @@ export default function SmallNewCards({image, title, date, author,}) {
                     width={199}
                     src={image}
                     alt="banner"
-                    className="w-[128px] h-[72px] object-cover"
+                    className="w-[128px] h-[72px] object-cover
+                      "
                 />
                 <div className="pl-2">
                     <h2 className='text-base font-semibold leading-[21.79px] tracking-wide'>{title}</h2>

@@ -1,5 +1,5 @@
 import H2 from '@/component/h2';
-import SmallNewCards from '@/component/new-careds/SmallNewCards';
+import SmallNewCards from '@/component/news-cards/SmallNewCards';
 import Section from '@/component/section';
 import Span from '@/component/span';
 import Image from 'next/image';
@@ -84,8 +84,6 @@ export default function HeroSection() {
                                     className="w-full h-[295px]  object-cover "
                                 />
                             </div>
-
-
 
                             <div className="flex flex-col gap-2  cursor-pointer">
                                 <Image

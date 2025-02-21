@@ -64,7 +64,6 @@ export default function MoreStories() {
                             </li>
                         ))}
                     </ul>
-
                 </div>
 
             </Section>

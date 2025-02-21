@@ -1,5 +1,5 @@
 import H2 from '@/component/h2'
-import SmallNewCards from '@/component/new-careds/SmallNewCards'
+import SmallNewCards from '@/component/news-cards/SmallNewCards'
 import Section from '@/component/section'
 import Span from '@/component/span'
 import Image from 'next/image'

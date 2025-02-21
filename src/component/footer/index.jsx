@@ -2,6 +2,7 @@ import { FaFacebookF, FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/
 import { CgMail } from "react-icons/cg";
 import { FiPhoneCall } from "react-icons/fi";
 import Link from 'next/link';
+import Button from '../button';
 
 export default function Footer() {
   const footerLinks = [
@@ -110,9 +111,10 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white py-3 px-4 rounded hover:bg-red-700 transition-colors"
-                >
-                  Subscribe
+                  className='w-full'
+                  >
+                
+                  <Button title="Subscribe" widithfull={true}/>
                 </button>
               </form>
             </div>

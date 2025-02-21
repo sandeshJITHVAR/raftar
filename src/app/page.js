@@ -4,16 +4,16 @@ import CityNews from "@/section/home/CityNews";
 import HeroSection from "@/section/home/HeroSection";
 import MoreStories from "@/section/home/MoreStories";
 import VideoNews2 from "@/section/home/VideoNews2";
-import VideosNew1 from "@/section/home/VideosNew1";
+import VideosStories1 from "@/section/comon/VideosSories1";
 import WebStories from "@/section/home/WebStories";
 
 export default function Home() {
   return (
     <main className="">
       <HeroSection />
-      <WebStories />
+      <WebStories banner={true}/>
       <Categaroy />
-      <VideosNew1 />
+      <VideosStories1/>
       <Bollywood />
       <VideoNews2 />
       <CityNews />

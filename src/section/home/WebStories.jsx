@@ -7,7 +7,7 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 
-export default function WebStories() {
+export default function WebStories({ banner }) {
     const sliderRef = useRef(null);
     const settings = {
         slidesToShow: 6,
@@ -39,8 +39,6 @@ export default function WebStories() {
     return (
         <>
 
-      
-
             <section className='px-4 md:px-6 lg:px-8 bg-primary ' >
                 <div className='max-w-[1440px] mx-auto py-8'>
 
@@ -69,13 +67,13 @@ export default function WebStories() {
                     <div className="flex justify-center space-x-4 mt-5">
                         <button
                             onClick={() => sliderRef.current?.slickPrev()}
-                            className="p-4 text-lg border-2 hover:border-0  hover:bg-black text-white duration-200   rounded-full"
+                            className="p-2 md:p-4 text-base md:text-lg border-2 hover:border-0  hover:bg-black text-white duration-200   rounded-full"
                         >
                             <FaArrowLeftLong />
                         </button>
                         <button
                             onClick={() => sliderRef.current?.slickNext()}
-                            className="p-4 text-lg border-2 hover:border-0  hover:bg-black text-white duration-200   rounded-full"
+                            className="p-2 md:p-4 text-base md:text-lg border-2 hover:border-0  hover:bg-black text-white duration-200   rounded-full"
                         >
                             <FaArrowRightLong />
                         </button>
@@ -83,6 +81,7 @@ export default function WebStories() {
                 </div>
             </section>
 
+            {banner && (
                 <div className='py-3 px-4 md:px-6 lg:px-8 flex justify-center max-w-6xl mx-auto'>
                     <Image
                         src='/assets/banner/103f61951fbc29bc7558c8eda8f86084.jpg'
@@ -92,7 +91,8 @@ export default function WebStories() {
                         height={100}
                         priority />
                 </div>
-            
+            )}
+
         </>
     );
 }
