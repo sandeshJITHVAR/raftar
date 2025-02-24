@@ -11,16 +11,24 @@ import { FiPhoneCall } from "react-icons/fi";
 import { CgMail } from "react-icons/cg";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { IoMdNotificationsOutline } from "react-icons/io";
-
-
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 
 export default function Navbar() {
   const { user, logout } = useAuth();
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPath = usePathname();
+
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+
+
+
 
   const menuItems = [
     { name: 'Home', path: '/' },
@@ -74,9 +82,6 @@ export default function Navbar() {
         </div>
       </div>
 
-
-
-
       <div className=' grid grid-cols-12 gap-4 py-4  px-4 md:px-6 lg:px-8 xl:px-0 max-w-[1440px] mx-auto'>
         <div className=' col-span-12 md:col-span-5 flex items-center '>
           <Link href="/" className='text-primary text-[32px] font-bold flex gap-2.5'>
@@ -114,18 +119,15 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center  gap-2">
-
-
             <div>
               {user ? (
-          
-                      <button
-                        onClick={logout}
-                        className="text-base  py-3 px-4"
-                      >
-                        Logout
-                      </button>
-  
+
+                <button
+                  onClick={logout}
+                  className="text-base  py-3 px-4"
+                >
+                  Logout
+                </button>
               ) : (
                 <Link
                   href="/login"
@@ -145,14 +147,10 @@ export default function Navbar() {
               <BiSearch className="text-xl cursor-pointer hover:opacity-80" />
             </Link>
 
-            <button className='hidden md:flex hover:opacity-80 m border-l text-2xl border-[#FFFFFFD4]/80 py-3.5 px-3'>
-              <BiMenu />
-            </button>
-
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleMenu}
               aria-label="Toggle menu"
-              className='flex md:hidden hover:opacity-80 border-l text-xl border-[#FFFFFFD4]/80 py-3.5 px-3'>
+              className='flex lg:hidden hover:opacity-80 border-l text-xl border-[#FFFFFFD4]/80 py-3.5 px-3'>
               <BiMenu className="text-2xl" />
             </button>
           </div>
@@ -170,6 +168,72 @@ export default function Navbar() {
           </h1>
         </div>
       </div>
+
+
+
+
+      {isOpen && (
+        <div
+          className="fixed top-0 h-full inset-0 bg-black/60 z-0"
+          onClick={() => setIsOpen(!isOpen)}
+        ></div>
+      )}
+
+      <AnimatePresence>
+        <motion.div
+          className="fixed top-0 left-0 h-full w-[90%] sm:w-[50%] md:w-[40%] border-r-2 border-primary bg-white shadow-lg transform duration-500 ease-in-out text-base z-50"
+          style={{ transform: isOpen ? 'translateX(0)' : 'translateX(-120%)' }}
+        >
+          <div className="flex justify-between items-center px-4 sm:px-5 py-6 ">
+            <div className='flex items-center '>
+              <Link href="/" className='text-primary text-[28px] md:text-[32px] font-bold flex gap-2.5'>
+                Highlands
+                <span className="text-black" style={{ fontFamily: 'Merriweather' }}>Today</span>
+              </Link>
+            </div>
+            <button onClick={toggleMenu} className="text-black text-xl">
+              <FaTimes />
+            </button>
+          </div>
+
+
+          <div className='px-4 sm:px-5 border-y border-tertiary/50'>
+            <div className="  py-8 space-y-1 sm:px-3">
+              {menuItems.map((item, index) => (
+                <span key={index}>
+                  <Link
+                    href={item.path}
+                    className={`border-l text-base  py-3 px-4 font-semibold border-[#FFFFFFD4]/60 block 
+                      ${currentPath === item.path ? 'bg-black text-white' : 'text-black hover:text-primary'}
+                      ${index === menuItems.length - 1 ? " border-r border-l " : ""}`}
+                  >
+                    {item.name}
+                  </Link>
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="justify-center py-4 flex gap-2">
+            {socialMedia.map((social, index) => {
+              return (
+                <div key={index} className='border-l text-lg bg-primary text-white p-3 rounded '>
+                  <Link
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 cursor-pointer"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+
+        </motion.div>
+      </AnimatePresence>
     </header>
   );
 };

@@ -1,6 +1,8 @@
 import Button from '@/component/button'
 import SmallNewCards from '@/component/news-cards/SmallNewCards'
 import Section from '@/component/section'
+import Advertis from '@/section-components/Advertis'
+import Banner from '@/section-components/Banner'
 import Contactwithme from '@/section-components/Contactwithme'
 import WebStories from '@/section/home/WebStories'
 import Image from 'next/image'
@@ -28,9 +30,9 @@ export default function page() {
                                 <Image
                                     src='/assets/banner/d639d993708863451867f2935a00537d.jpg'
                                     alt='banner'
-                                    className="w-[64px] h-[64px]  rounded-full object-cover"
-                                    width={100}
-                                    height={100}
+                                    className="w-[64px] h-[64px] aspect-w-16 aspect-h-9  rounded-full object-cover"
+                                    width={64}
+                                    height={64}
                                     priority
                                 />
 
@@ -92,13 +94,7 @@ export default function page() {
                                 <hr className="border-t-2  border-secondary " />
                             </div>
                             <div className="w-full">
-                                <Image
-                                    src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png" // Replace with actual image URL
-                                    alt="News Highlight"
-                                    width={500}
-                                    height={300}
-                                    className="h-[250px] w-full object-cover"
-                                />
+                                <Advertis />
                             </div>
                         </div>
 

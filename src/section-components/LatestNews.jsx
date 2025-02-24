@@ -1,7 +1,6 @@
 import H2 from '@/component/h2';
-import Span from '@/component/span';
-import Image from 'next/image';
 import Advertis from './Advertis';
+import Link from 'next/link';
 export default function LatestNews() {
     const newsData = [
         {
@@ -52,17 +51,21 @@ export default function LatestNews() {
                                 <span className="text-gray-500 font-bold italic text-xl">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
-                                <H2 text={news.title} />
+                                <Link href='/newsdetails'>
+                                    <H2 text={news.title} />
+                                </Link>
                             </div>
-                            <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
+                            <div className="flex items-center gap-2 mt-1 md:mt-2 text-xs text-gray-500">
                                 <div className='w-9 h-[1px] bg-gray-500 ' />
-                                <Span text="17th Feb, 2025, Rajesh Sharma" />
+                                <span className='flex gap-1 text-xs font-normal text-tertiary'>
+                                    17 Feb, 2025,
+                                    <Link href='/autherprofile'>Sammy King</Link>
+                                </span>
                             </div>
                         </li>
                     ))}
                 </ul>
             </div>
-
         </>
     )
 }

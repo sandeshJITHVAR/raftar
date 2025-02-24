@@ -5,6 +5,7 @@ import Image from "next/image";
 import TitleTag from "@/component/titletag";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Link from "next/link";
 
 
 export default function WebStories({ banner }) {
@@ -41,7 +42,6 @@ export default function WebStories({ banner }) {
 
             <section className='px-4 md:px-6 lg:px-8 bg-primary ' >
                 <div className='max-w-[1440px] mx-auto py-8'>
-
                     <div className="flex justify-between items-center border-b pb-3  border-secondary">
                         <TitleTag title="Web stories" bgblack={true} />
                         <div className="pr-3">
@@ -50,16 +50,18 @@ export default function WebStories({ banner }) {
                     </div>
                     <Slider ref={sliderRef} {...settings} className="relative mt-5">
                         {stories.map((items, index) => (
-                            <div key={index} className="px-1 2xl:px-0">
+                            <div key={index} className="px-1 md:px-0">
                                 <div className="flex flex-col gap-[10px] overflow-hidden">
                                     <Image
                                         src="/assets/banner/b3cb7acb1dd04f573ae4eff93409fc06.png"
                                         alt={items.title}
-                                        width={300}
-                                        height={400}
-                                        className="h-[385px] w-[221px] rounded-xl object-cover"
+                                        width={216}
+                                        height={384}
+                                        className="h-[384px] w-[216px] rounded-xl object-cover"
                                     />
-                                    <h3 className="text-white font-bold leading-[21px] underline  underline-offset-[22%] text-base ">{items.title}</h3>
+                                    <Link href='/newsdetails'>
+                                        <h3 className="text-white font-bold md:leading-[21px] underline  underline-offset-[22%] text-sm md:text-base ">{items.title}</h3>
+                                    </Link>
                                 </div>
                             </div>
                         ))}
@@ -86,13 +88,12 @@ export default function WebStories({ banner }) {
                     <Image
                         src='/assets/banner/103f61951fbc29bc7558c8eda8f86084.jpg'
                         alt='banner'
-                        className="w-[728px] h-[95px]  object-cover"
-                        width={200}
-                        height={100}
+                        className="w-[728px] h-[95px] aspect-w-16 aspect-h-9  object-cover"
+                        width={728}
+                        height={95}
                         priority />
                 </div>
             )}
-
         </>
     );
 }

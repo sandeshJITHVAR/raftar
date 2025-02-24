@@ -4,6 +4,7 @@ import TitleTag from '@/component/titletag'
 import SocialMediaOften from '@/section-components/SocialMediaOften'
 import SubScribeFrom from '@/section-components/SubScribeFrom'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { FaRegCirclePlay } from "react-icons/fa6";
 
@@ -25,11 +26,11 @@ export default function VideoNews2() {
                                 <div className="">
                                     <div className="relative">
                                         <Image
-                                            height={199}
-                                            width={199}
+                                            height={249}
+                                            width={442}
                                             src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                             alt="banner"
-                                            className="w-full h-[249px] object-cover z-0"
+                                            className="w-full h-[249px] aspect-w-16 aspect-h-9 object-cover z-0"
                                         />
                                         <div className="absolute z-10 w-full h-fit  backdrop-blur-[3px] bottom-0 left-0 text-white   px-4 py-2.5">
                                             <div className="flex items-center gap-2 ">
@@ -41,10 +42,11 @@ export default function VideoNews2() {
                                         </div>
                                     </div>
 
-                                    <h1 className="text-[20px] font-bold mt-3">
-                                        Inside Kumbh Mela – A Spiritual Journey
-                                    </h1>
+                                    <h3 className="text-[20px] font-bold mt-3">
+                                        <Link href='/newsdetails'>    Inside Kumbh Mela – A Spiritual Journey </Link>
+                                    </h3>
                                 </div>
+
                                 {[1, 2,].map((_, index) => (
                                     <SmallNewCards
                                         key={index} // Keep key here, not inside the component

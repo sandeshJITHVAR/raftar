@@ -16,9 +16,9 @@ export default function Comments({ comment, level = 0 }) {
                         <Image
                             src={comment.avatar}
                             alt={comment.author}
-                            className="w-[48px] h-[48px] border-2 border-primary  rounded-full object-cover"
-                            width={100}
-                            height={100}
+                            className="w-[48px] h-[48px] aspect-w-16 aspect-h-9 border-2 border-primary  rounded-full object-cover"
+                            width={48}
+                            height={48}
                             priority />
                         <div className="text-base flex-1 font-semibold">{comment.author}</div>
                     </div>
@@ -56,9 +56,9 @@ export default function Comments({ comment, level = 0 }) {
                             <Image
                                 src={comment.avatar}
                                 alt={comment.author}
-                                className="w-[48px] h-[48px] border-2 border-primary  rounded-full object-cover"
-                                width={100}
-                                height={100}
+                                className="w-[48px] h-[48px] aspect-w-16 aspect-h-9 border-2 border-primary  rounded-full object-cover"
+                                width={48}
+                                height={48}
                                 priority />
                             <input type="text" className="py-3 px-4 flex-1 text-base font-semibold placeholder:text-black placeholder:text-base rounded-lg border border-tertiary/50 p-2 w-full" placeholder="Write a reply..." />
                         </div>

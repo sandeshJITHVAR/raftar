@@ -148,11 +148,11 @@ export default function page() {
                                 </div>
                                 <div className="flex flex-col gap-4">
                                     <Image
-                                        height={199}
-                                        width={199}
+                                        height={503}
+                                        width={882}
                                         src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                         alt="banner"
-                                        className="w-full h-[503px]  object-cover rounded-xl"
+                                        className="w-full h-[503px] aspect-w-16 aspect-h-9  object-cover rounded-xl"
                                     />
 
                                     <div className='flex flex-col gap-2.5 py-2.5'>
@@ -197,11 +197,11 @@ export default function page() {
 
                                             <div className="flex flex-col md:flex-row gap-2.5 py-2.5">
                                                 <Image
-                                                    height={199}
-                                                    width={199}
+                                                    height={186}
+                                                    width={289}
                                                     src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                                     alt="banner"
-                                                    className="w-full md:w-[289px] h-[186px]  object-cover"
+                                                    className="w-full md:w-[289px] h-[186px] aspect-w-16 aspect-h-9 object-cover"
                                                 />
 
                                                 <div className="flex flex-col gap-2.5 md:px-2.5">
@@ -225,11 +225,11 @@ export default function page() {
                                         <p className='text-base font-normal'>The long-awaited Ram Temple in Ayodhya is nearing completion, with preparations underway for a grand inauguration ceremony. The temple, considered a historic and cultural landmark, is expected to attract millions of devotees from across India and beyond.</p>
 
                                         <Image
-                                            height={199}
-                                            width={199}
+                                            height={496}
+                                            width={882}
                                             src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                             alt="banner"
-                                            className="w-full h-[496px]  object-cover"
+                                            className="w-full h-[496px] aspect-w-16 aspect-h-9 object-cover"
                                         />
 
                                         <p className='text-base font-normal'>The long-awaited Ram Temple in Ayodhya is nearing completion, with preparations underway for a grand inauguration ceremony. The temple, considered a historic and cultural landmark, is expected to attract millions of devotees from across India and beyond.</p>
@@ -290,11 +290,11 @@ export default function page() {
                                     </p>
                                 </div>
                                 <Image
-                                    height={199}
-                                    width={199}
+                                    height={181}
+                                    width={289}
                                     src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                     alt="banner"
-                                    className="w-[289px] h-[181px]  object-cover"
+                                    className="w-[289px] h-[181px] aspect-w-16 aspect-h-9 object-cover"
                                 />
                             </div>
 
@@ -337,9 +337,9 @@ export default function page() {
                                     <Image
                                         src='/assets/banner/d639d993708863451867f2935a00537d.jpg'
                                         alt='banner'
-                                        className="w-[64px] h-[64px]  rounded-full object-cover"
-                                        width={100}
-                                        height={100}
+                                        className="w-[64px] h-[64px] aspect-w-16 aspect-h-9  rounded-full object-cover"
+                                        width={64}
+                                        height={64}
                                         priority
                                     />
 

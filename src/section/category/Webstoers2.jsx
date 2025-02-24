@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import TitleTag from "@/component/titletag";
+import Link from "next/link";
 
 export default function Webstoers2() {
     const stories = [
@@ -19,7 +20,7 @@ export default function Webstoers2() {
                 <div className="flex justify-between items-center border-b border-tertiary/50">
                     <TitleTag title="Web stories" bgblack={true} />
                     <div className="pr-3">
-                        <button className="font-bold text-base text-white">Read more</button>
+                        <button className="font-bold text-base text-primary">Read more</button>
                     </div>
                 </div>
                 <div className="relative mt-5  grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-[16px] ">
@@ -28,11 +29,13 @@ export default function Webstoers2() {
                             <Image
                                 src="/assets/banner/b3cb7acb1dd04f573ae4eff93409fc06.png"
                                 alt={items.title}
-                                width={300}
-                                height={400}
-                                className="h-[385px]   object-cover"
+                                width={216}
+                                height={384}
+                                className="h-[384px] w-full object-cover"
                             />
-                            <h3 className="text-black font-bold leading-[21px] underline  underline-offset-[22%] text-base ">{items.title}</h3>
+                            <Link href='/newsdetails'>
+                                <h3 className="text-black font-bold md:leading-[21px] underline  underline-offset-[22%] text-sm md:text-base ">{items.title}</h3>
+                            </Link>
                         </div>
                     ))}
                 </div>

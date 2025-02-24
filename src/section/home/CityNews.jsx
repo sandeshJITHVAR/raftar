@@ -3,9 +3,10 @@ import { useState } from "react";
 import Image from "next/image";
 import H2 from '@/component/h2'
 import Section from '@/component/section'
-import Span from '@/component/span'
 import TitleTag from '@/component/titletag'
 import React from 'react'
+import Link from "next/link";
+import Advertis from "@/section-components/Advertis";
 
 export default function CityNews() {
     const cities = ["Uttar-Pradesh", "Jharkhand", "Bihar", "Madhya-Pradesh", "Delhi"];
@@ -39,13 +40,11 @@ export default function CityNews() {
         },
     ];
 
-
-
     return (
         <>
-            <Section  border={true}>
+            <Section border={true}>
                 <div className='grid grid-cols-12 gap-y-6  gap-x-[10px]'>
-                    <div className=' col-span-12 lg:col-span-9'>
+                    <div className=' col-span-12 lg:col-span-9 flex flex-col gap-8'>
                         <div className="flex justify-between items-center border-b  gap-2 border-tertiary/50">
                             <TitleTag title="Web Stories" />
                             <div className="pr-3 gap-2 lg:gap-7 text-base hidden xl:flex">
@@ -61,7 +60,7 @@ export default function CityNews() {
                                 ))}
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 xl:grid-cols-3 mt-7 gap-y-4 xl:gap-x-[10px]">
+                        <div className="grid grid-cols-1 xl:grid-cols-3 gap-y-4 xl:gap-x-4">
                             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-y-3 md:gap-y-8 gap-x-[10px]">
                                 {[1, 2,].map((items, index) => (
                                     <div
@@ -69,31 +68,40 @@ export default function CityNews() {
                                         className="flex flex-col gap-3 "
                                     >
                                         <Image
-                                            height={199}
-                                            width={199}
+                                            height={161}
+                                            width={296}
                                             src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                             alt="banner"
-                                            className="w-full h-[161px] object-cover"
+                                            className="w-full md:h-[161px] aspect-w-16 aspect-h-9  object-cover"
                                         />
-                                        <H2 text="Mumbai Metro Expands: New Route to Ease Traffic Woes" />
+                                        <Link href='/newsdetails'> <H2 text="Mumbai Metro Expands: New Route to Ease Traffic Woes" /> </Link>
                                     </div>
                                 ))}
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 col-span-2 h-fit gap-x-2.5 gap-y-5">
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 col-span-2 h-fit gap-x-2.5 gap-y-4">
                                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((items, index) => (
                                     <div
                                         key={index}
-                                        className="flex gap-2 pb-3 cursor-pointer border-b border-tertiary/50"
+                                        className="flex gap-2 pb-2 md:pb-3 cursor-pointer border-b border-tertiary/50"
                                     >
                                         <Image
-                                            height={199}
-                                            width={199}
+                                            width={96}
+                                            height={54}
                                             src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                             alt="banner"
-                                            className="w-[128px] h-[72px] lg:w-[96px] lg:h-[54px] object-cover"
+                                            className="w-[128px] lg:w-[96px]  h-[72px] lg:h-[54px] object-cover"
                                         />
+
+                                        {/* <Image
+                                                        width={96}
+                                                        height={54}
+                                                        src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
+                                                        alt="banner"
+                                                        className="md:w-[96px] md:h-[54px] aspect-w-16 aspect-h-9  object-cover"
+                                                    /> */}
                                         <div className="flex-1">
-                                            <H2 text="Mumbai Metro Expands: New Route to Ease Traffic Woes" />
+                                            <Link href='/newsdetails'> <H2 text="Mumbai Metro Expands: New Route to Ease Traffic Woes" /> </Link>
                                         </div>
                                     </div>
                                 ))}
@@ -105,18 +113,12 @@ export default function CityNews() {
                         <div className='flex flex-col gap-y-3'>
                             <div className='flex flex-col gap-y-1'>
                                 <h2 className="text-secondary font-bold text-2xl" style={{ fontFamily: 'Merriweather' }}>
-                                    Latest News <span className="text-black">Now</span>
+                                    Treading<span className="text-black">Nows</span>
                                 </h2>
                                 <hr className="border-t-2  border-secondary " />
                             </div>
                             <div className="w-full">
-                                <Image
-                                    src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png" // Replace with actual image URL
-                                    alt="News Highlight"
-                                    width={500}
-                                    height={300}
-                                    className="h-[250px] w-full object-cover"
-                                />
+                                <Advertis />
                             </div>
                         </div>
 
@@ -127,11 +129,16 @@ export default function CityNews() {
                                         <span className="text-gray-500 font-bold italic text-xl">
                                             {String(index + 1).padStart(2, "0")}
                                         </span>
-                                        <H2 text={news.title} />
+                                        <Link href='/newsdetails'>
+                                            <H2 text={news.title} />
+                                        </Link>
                                     </div>
-                                    <div className="flex items-center gap-2 mt-1 text-xs text-gray-500">
-                                        <div className='w-8 h-[1px] bg-gray-500 ' />
-                                        <Span text="17th Feb, 2025, Rajesh Sharma" />
+                                    <div className="flex items-center gap-2 mt-1 md:mt-2 text-xs text-gray-500">
+                                        <div className='w-9 h-[1px] bg-gray-500 ' />
+                                        <span className='flex gap-1 text-xs font-normal text-tertiary'>
+                                            17 Feb, 2025,
+                                            <Link href='/autherprofile'>Sammy King</Link>
+                                        </span>
                                     </div>
                                 </li>
                             ))}

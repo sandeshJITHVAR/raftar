@@ -4,13 +4,25 @@ import React from 'react'
 export default function Advertis({ big }) {
     return (
         <>
-            <Image
-                src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png" // Replace with actual image URL
-                alt="News Highlight"
-                width={500}
-                height={300}
-                className={`${big ? "h-[500px] " : "h-[250px]"}  w-full object-cover`}
-            />
+            {
+                big ? (
+                    <Image
+                        src="/assets/banner/d8d0845d5b7962d3bbf5d91748bae628.png" // Replace with actual image URL
+                        alt="News Highlight"
+                        width={500}
+                        height={245}
+                        className={`md:h-[500px] aspect-w-16 aspect-h-9   w-full object-cover`}
+                    />
+                ) : (
+                    <Image
+                        src="/assets/banner/d8d0845d5b7962d3bbf5d91748bae628.png" // Replace with actual image URL
+                        alt="News Highlight"
+                        width={250}
+                        height={250}
+                        className={`md:h-[250px] aspect-w-16 aspect-h-9  w-full object-cover`}
+                    />
+                )
+            }
         </>
     )
 }
