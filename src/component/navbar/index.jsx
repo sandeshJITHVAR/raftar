@@ -3,16 +3,16 @@ import { useState } from 'react';
 import { useAuth } from '@/lib/AuthProvider';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FaWhatsapp, FaInstagram, } from 'react-icons/fa';
 import { BiMenu, BiSearch } from 'react-icons/bi';
-import { usePathname, useRouter } from 'next/navigation';
 import { SlSocialFacebook } from "react-icons/sl";
 import { FiPhoneCall } from "react-icons/fi";
 import { CgMail } from "react-icons/cg";
 import { SlSocialLinkedin } from "react-icons/sl";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
 
 
 export default function Navbar() {
@@ -25,8 +25,6 @@ export default function Navbar() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-
 
 
 
@@ -46,6 +44,25 @@ export default function Navbar() {
     { icon: <FaInstagram />, link: 'https://instagram.com', name: 'Instagram' },
     { icon: <SlSocialLinkedin />, link: 'https://linkedin.com', name: 'LinkedIn' },
   ];
+
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const notifications = [
+    { id: 1, message: "New message received", time: "5 min ago" },
+    { id: 2, message: "Your post was liked", time: "1 hour ago" },
+    { id: 3, message: "New follower", time: "2 hours ago" }
+  ];
+
+
+  const newsTexts = [
+    "Legal Battle Over Namadi Kanu's Detention",
+    "Legal Battle Over Namadi Kanu's Detention",
+    "Legal Battle Over Namadi Kanu's Detention",
+    "Legal Battle Over Namadi Kanu's Detention",
+    "Legal Battle Over Namadi Kanu's Detention",
+  ];
+
 
   return (
     <header className="w-full">
@@ -102,7 +119,7 @@ export default function Navbar() {
       </div>
 
       <div className='bg-primary  text-white'>
-        <div className='flex justify-end lg:justify-between h-12 relative overflow-hidden items-center px-4 md:px-6 lg:px-8   xl:px-0 max-w-[1440px] mx-auto'>
+        <div className='flex  justify-end lg:justify-between relative overflow-hidden items-center px-4 md:px-6 lg:px-8   xl:px-0 max-w-[1440px] mx-auto'>
           <ul className="hidden lg:flex">
             {menuItems.map((item, index) => (
               <li key={index}>
@@ -139,9 +156,51 @@ export default function Navbar() {
             </div>
 
 
-            <Link href="/" className='hover:opacity-80 border-l text-xl border-[#FFFFFFD4]/60 py-3.5 px-3'>
-              <IoMdNotificationsOutline />
-            </Link>
+            <div
+  className=""
+  onMouseEnter={() => setDropdownOpen(true)}
+  onMouseLeave={() => setDropdownOpen(false)}
+>
+  {/* Notification Icon */}
+  <div className="border-l text-xl border-[#FFFFFFD4]/60 py-3.5 px-3 hover:opacity-80 cursor-pointer">
+    <IoMdNotificationsOutline />
+  </div>
+
+  {/* Dropdown Menu */}
+  {dropdownOpen && ( // Ensure dropdown only renders when open
+    <div
+      className="absolute top-full right-0 mt-2 h-96 w-80 bg-white rounded-lg shadow-lg transform transition-all duration-300 ease-in-out z-40 opacity-100 translate-y-0"
+    >
+      <div className="p-4 border-b border-gray-200">
+        <h3 className="text-lg font-semibold text-gray-800">Notifications</h3>
+      </div>
+
+      <div className="max-h-80 overflow-y-auto">
+        {notifications.length > 0 ? (
+          notifications.map((notification) => (
+            <div
+              key={notification.id}
+              className="p-4 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 cursor-pointer"
+            >
+              <p className="text-sm text-gray-800">{notification.message}</p>
+              <span className="text-xs text-gray-500 mt-1 block">{notification.time}</span>
+            </div>
+          ))
+        ) : (
+          <p className="p-4 text-sm text-gray-500">No notifications</p>
+        )}
+      </div>
+
+      <div className="p-4 border-t border-gray-200">
+        <button className="w-full text-sm text-primary hover:text-primary/80 font-medium">
+          View all notifications
+        </button>
+      </div>
+    </div>
+  )}
+</div>
+
+
 
             <Link href="/" className='hover:opacity-80 border-l text-xl border-[#FFFFFFD4]/60 py-3.5 px-3'>
               <BiSearch className="text-xl cursor-pointer hover:opacity-80" />
@@ -157,15 +216,37 @@ export default function Navbar() {
         </div>
       </div>
 
+
+     
+
       <div className='bg-primary  text-white  mt-2 '>
         <div className='hidden md:flex  h-12 relative  items-center px-4 md:px-6 lg:px-8  xl:px-0 max-w-[1440px] mx-auto'>
-          <h1 className="border-l text-base bg-black  py-3 px-4 font-semibold border-[#FFFFFFD4]/50 block " >
+          <h3 className="border-l w-fit text-base bg-black  py-3 px-4 font-semibold border-[#FFFFFFD4]/50 block " >
             BREAKING NEWSBREAKING NEWS
-          </h1>
+          </h3>
 
-          <h1 className="border-l text-base py-3 px-4 font-normal border-[#FFFFFFD4]/50 block ">
-            Legal Battle Over Namadi Kanu's Detention
-          </h1>
+          <div className="w-full flex-1 overflow-hidden relative">
+            <motion.div
+              className="flex whitespace-nowrap"
+              initial={{ x: "100%" }}
+              animate={{ x: "-100%" }}
+              transition={{
+                repeat: Infinity,
+                duration: 10,
+                ease: "linear",
+              }}
+            >
+              {newsTexts.map((text, index) => (
+                <Link
+                  href="/newsdetails"
+                  key={index}
+                  className="border-l text-base py-3 px-4 font-normal border-[#FFFFFFD4]/50"
+                >
+                  {text}
+                </Link>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
 
@@ -186,7 +267,7 @@ export default function Navbar() {
         >
           <div className="flex justify-between items-center px-4 sm:px-5 py-6 ">
             <div className='flex items-center '>
-              <Link href="/" className='text-primary text-[28px] md:text-[32px] font-bold flex gap-2.5'>
+              <Link href="/" className='text-primary text-[28px]  font-bold flex gap-2.5'>
                 Highlands
                 <span className="text-black" style={{ fontFamily: 'Merriweather' }}>Today</span>
               </Link>
@@ -231,10 +312,138 @@ export default function Navbar() {
               );
             })}
           </div>
-
         </motion.div>
       </AnimatePresence>
     </header>
   );
 };
 
+
+
+{/* <header className="sticky top-0 z-50 w-full bg-[#fbfffc] shadow">
+<div className="container flex  items-center justify-between px-4 md:px-6 mx-auto">
+  <Link href="/" className="flex items-center gap-2">
+    <img src="/logo.svg" alt="Logo" />
+  </Link>
+
+
+  <nav className="hidden md:flex items-center gap-6 font-sofia">
+
+    <MenuLink title="Home" herfURL="/" />
+
+    <Dropdown
+      title="Company"
+      items={[
+        { href: "/about", label: "About Us" },
+        { href: "/terms-and-conditions", label: "Term and Conditions" },
+        { href: "/privacy-policy", label: "Privacy Policy" },
+        { href: "/blog", label: "Blog" },
+        { href: "/shipping-and-delivery", label: "Shipping and Delivery" },
+        { href: "/cancellation-and-refund", label: "Cancellation and Refund Policy" },
+      ]}
+    />
+
+
+    <MenuLink title="Pricing" herfURL="/pricing" />
+
+    <Dropdown
+      title="WABAIS For"
+      items={[
+        { href: "/e-commerce", label: "E-Commerce" },
+        { href: "/health-care", label: "Healthcare" },
+        { href: "/education-tech", label: "Edtech" },
+        { href: "/government-bodies", label: "Government Bodies" },
+        { href: "/real-estate", label: "Real Estate" },
+        { href: "/marketing", label: "Marketing" },
+        { href: "/customer-support", label: "Customer Support" },
+        { href: "/sales", label: "Sales Team" },
+      ]}
+    />
+
+    <Dropdown
+      title="Integration"
+      items={[
+        { href: "/native-apis", label: "Native APIs" },
+        { href: "/chatbot", label: "Chatbot" },
+        { href: "/crm", label: "CRM" },
+        { href: "/e-commerce", label: "E-commerce" },
+        { href: "/cms", label: "CMS" },
+        { href: "/pos", label: "POS" },
+      ]}
+    />
+
+    <MenuLink title="Contact" herfURL="/contact" />
+  </nav>
+
+  <div className="flex items-center gap-4">
+    <Link href="/pricing" className={buttonVariants({ variant: "site-green" })}>
+      Get Started <CornerDownRight />
+    </Link>
+
+  
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="ghost" size="icon" className="md:hidden">
+          <Menu className="h-6 w-6" />
+          <span className="sr-only">Toggle navigation menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="right">
+        <nav className="flex flex-col gap-4">
+          <Link href="/" className="text-sm font-medium">Home</Link>
+          <Link href="/about" className="text-sm font-medium">About</Link>
+          <Link href="/pricing" className="text-sm font-medium">Pricing</Link>
+          <Link href="/contact" className="text-sm font-medium">Contact</Link>
+        </nav>
+      </SheetContent>
+    </Sheet>
+  </div>
+</div>
+</header>
+
+function Dropdown({ title, items }) {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="relative"
+      onMouseOver={() => setIsOpen(true)}
+      onMouseOut={() => setIsOpen(false)}
+    >
+      <button
+        className="flex relative group items-center gap-1 text-lg py-4 lg:py-6 font-semibold focus:outline-none"
+      >
+        <h1 className="group-hover:text-site-green text-lg"> {title}</h1>
+        <ChevronDown className="h-4 w-4 duration-300 rotate-0 group-hover:rotate-180 group-hover:text-site-green" />
+        <span className="absolute  bottom-1 h-[2px] w-0 bg-site-green transition-all duration-300 group-hover:w-full" />
+      </button>
+
+
+      <div
+        className={`absolute left-0 mt-2 w-48 px-2 bg-white text-black shadow-xl transform transition-all duration-300 ease-in-out pointer-events-auto border ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}
+      >
+        <ul className="">
+          {items.map((item) => (
+            <li className="relative group"
+              key={item.href}>
+              <Link href={item.href}
+                className="block px-2 py-2 group-hover:text-site-green ">
+                {item.label}
+                <span className="absolute left-0 bottom-1 h-[1px] w-0 bg-site-green transition-all duration-300 group-hover:w-full" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function MenuLink({ title, herfURL }) {
+  return (
+    <Link href={herfURL}
+      className="flex relative group items-center gap-1 text-lg py-4 lg:py-6 font-semibold focus:outline-none"
+    >
+      <h1 className="group-hover:text-site-green text-lg"> {title}</h1>
+      <span className="absolute  bottom-1 h-[2px] w-0 bg-site-green transition-all duration-300 group-hover:w-full" />
+    </Link>
+  );
+} */}
