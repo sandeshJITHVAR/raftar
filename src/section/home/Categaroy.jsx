@@ -60,7 +60,7 @@ export default function Categaroy() {
                         </div>
                     </div>
 
-                    <div className='flex flex-col h-fit gap-[14px]'>
+                    {/* <div className='flex flex-col h-fit gap-[14px]'>
 
                         <div className='flex flex-row items-center gap-x-3'>
                             <h2 className="text-primary font-bold text-2xl" style={{ fontFamily: 'Merriweather' }}>
@@ -153,7 +153,7 @@ export default function Categaroy() {
                                 />
                             ))}
                         </div>
-                    </div>
+                    </div> */}
 
 
 

@@ -10,14 +10,14 @@ import WebStories from "@/section/home/WebStories";
 export default function Home() {
   return (
     <main className="">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <WebStories banner={true} />
-      <Categaroy />
+      {/* <Categaroy />
       <VideosStories1 />
       <Bollywood />
       <VideoNews2 />
       <CityNews />
-      <MoreStories />
+      <MoreStories /> */}
     </main>
   );
 }

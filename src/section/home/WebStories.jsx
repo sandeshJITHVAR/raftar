@@ -83,7 +83,7 @@ export default function WebStories({ banner }) {
                 </div>
             </section>
 
-            {banner && (
+              {banner && (
                 <div className='py-3 px-4 md:px-6 lg:px-8 flex justify-center max-w-6xl mx-auto'>
                     <Image
                         src='/assets/banner/103f61951fbc29bc7558c8eda8f86084.jpg'

@@ -217,6 +217,88 @@ export default function Navbar() {
       </div>
 
 
+
+      <header className="sticky top-0 z-50 w-full bg-[#fbfffc] shadow">
+<div className="container flex  items-center justify-between px-4 md:px-6 mx-auto">
+  <Link href="/" className="flex items-center gap-2">
+    <img src="/logo.svg" alt="Logo" />
+  </Link>
+
+
+  <nav className="hidden md:flex items-center gap-6 font-sofia">
+
+    <MenuLink title="Home" herfURL="/" />
+
+    <Dropdown
+      title="Company"
+      items={[
+        { href: "/about", label: "About Us" },
+        { href: "/terms-and-conditions", label: "Term and Conditions" },
+        { href: "/privacy-policy", label: "Privacy Policy" },
+        { href: "/blog", label: "Blog" },
+        { href: "/shipping-and-delivery", label: "Shipping and Delivery" },
+        { href: "/cancellation-and-refund", label: "Cancellation and Refund Policy" },
+      ]}
+    />
+
+
+    <MenuLink title="Pricing" herfURL="/pricing" />
+
+    <Dropdown
+      title="WABAIS For"
+      items={[
+        { href: "/e-commerce", label: "E-Commerce" },
+        { href: "/health-care", label: "Healthcare" },
+        { href: "/education-tech", label: "Edtech" },
+        { href: "/government-bodies", label: "Government Bodies" },
+        { href: "/real-estate", label: "Real Estate" },
+        { href: "/marketing", label: "Marketing" },
+        { href: "/customer-support", label: "Customer Support" },
+        { href: "/sales", label: "Sales Team" },
+      ]}
+    />
+
+    <Dropdown
+      title="Integration"
+      items={[
+        { href: "/native-apis", label: "Native APIs" },
+        { href: "/chatbot", label: "Chatbot" },
+        { href: "/crm", label: "CRM" },
+        { href: "/e-commerce", label: "E-commerce" },
+        { href: "/cms", label: "CMS" },
+        { href: "/pos", label: "POS" },
+      ]}
+    />
+
+    <MenuLink title="Contact" herfURL="/contact" />
+  </nav>
+
+  <div className="flex items-center gap-4">
+    <Link href="/pricing" className={buttonVariants({ variant: "site-green" })}>
+      Get Started <CornerDownRight />
+    </Link>
+
+  
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="ghost" size="icon" className="md:hidden">
+          <Menu className="h-6 w-6" />
+          <span className="sr-only">Toggle navigation menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="right">
+        <nav className="flex flex-col gap-4">
+          <Link href="/" className="text-sm font-medium">Home</Link>
+          <Link href="/about" className="text-sm font-medium">About</Link>
+          <Link href="/pricing" className="text-sm font-medium">Pricing</Link>
+          <Link href="/contact" className="text-sm font-medium">Contact</Link>
+        </nav>
+      </SheetContent>
+    </Sheet>
+  </div>
+</div>
+</header>
+
      
 
       <div className='bg-primary  text-white  mt-2 '>
@@ -320,87 +402,6 @@ export default function Navbar() {
 
 
 
-{/* <header className="sticky top-0 z-50 w-full bg-[#fbfffc] shadow">
-<div className="container flex  items-center justify-between px-4 md:px-6 mx-auto">
-  <Link href="/" className="flex items-center gap-2">
-    <img src="/logo.svg" alt="Logo" />
-  </Link>
-
-
-  <nav className="hidden md:flex items-center gap-6 font-sofia">
-
-    <MenuLink title="Home" herfURL="/" />
-
-    <Dropdown
-      title="Company"
-      items={[
-        { href: "/about", label: "About Us" },
-        { href: "/terms-and-conditions", label: "Term and Conditions" },
-        { href: "/privacy-policy", label: "Privacy Policy" },
-        { href: "/blog", label: "Blog" },
-        { href: "/shipping-and-delivery", label: "Shipping and Delivery" },
-        { href: "/cancellation-and-refund", label: "Cancellation and Refund Policy" },
-      ]}
-    />
-
-
-    <MenuLink title="Pricing" herfURL="/pricing" />
-
-    <Dropdown
-      title="WABAIS For"
-      items={[
-        { href: "/e-commerce", label: "E-Commerce" },
-        { href: "/health-care", label: "Healthcare" },
-        { href: "/education-tech", label: "Edtech" },
-        { href: "/government-bodies", label: "Government Bodies" },
-        { href: "/real-estate", label: "Real Estate" },
-        { href: "/marketing", label: "Marketing" },
-        { href: "/customer-support", label: "Customer Support" },
-        { href: "/sales", label: "Sales Team" },
-      ]}
-    />
-
-    <Dropdown
-      title="Integration"
-      items={[
-        { href: "/native-apis", label: "Native APIs" },
-        { href: "/chatbot", label: "Chatbot" },
-        { href: "/crm", label: "CRM" },
-        { href: "/e-commerce", label: "E-commerce" },
-        { href: "/cms", label: "CMS" },
-        { href: "/pos", label: "POS" },
-      ]}
-    />
-
-    <MenuLink title="Contact" herfURL="/contact" />
-  </nav>
-
-  <div className="flex items-center gap-4">
-    <Link href="/pricing" className={buttonVariants({ variant: "site-green" })}>
-      Get Started <CornerDownRight />
-    </Link>
-
-  
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden">
-          <Menu className="h-6 w-6" />
-          <span className="sr-only">Toggle navigation menu</span>
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="right">
-        <nav className="flex flex-col gap-4">
-          <Link href="/" className="text-sm font-medium">Home</Link>
-          <Link href="/about" className="text-sm font-medium">About</Link>
-          <Link href="/pricing" className="text-sm font-medium">Pricing</Link>
-          <Link href="/contact" className="text-sm font-medium">Contact</Link>
-        </nav>
-      </SheetContent>
-    </Sheet>
-  </div>
-</div>
-</header>
-
 function Dropdown({ title, items }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -412,7 +413,6 @@ function Dropdown({ title, items }) {
         className="flex relative group items-center gap-1 text-lg py-4 lg:py-6 font-semibold focus:outline-none"
       >
         <h1 className="group-hover:text-site-green text-lg"> {title}</h1>
-        <ChevronDown className="h-4 w-4 duration-300 rotate-0 group-hover:rotate-180 group-hover:text-site-green" />
         <span className="absolute  bottom-1 h-[2px] w-0 bg-site-green transition-all duration-300 group-hover:w-full" />
       </button>
 
@@ -446,4 +446,4 @@ function MenuLink({ title, herfURL }) {
       <span className="absolute  bottom-1 h-[2px] w-0 bg-site-green transition-all duration-300 group-hover:w-full" />
     </Link>
   );
-} */}
+} 
