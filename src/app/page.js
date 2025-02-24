@@ -13,7 +13,6 @@ export default function Home() {
       <HeroSection />
       <WebStories banner={true} />
       <Categaroy />
-      <Categaroy />
       <VideosStories1 />
       <Bollywood />
       <VideoNews2 />
