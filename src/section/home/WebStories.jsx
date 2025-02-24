@@ -50,7 +50,7 @@ export default function WebStories({ banner }) {
                     </div>
                     <Slider ref={sliderRef} {...settings} className="relative mt-5">
                         {stories.map((items, index) => (
-                            <div key={index} className="px-1 md:px-0">
+                            <div key={index} className="px-1 lg:px-0">
                                 <div className="flex flex-col gap-[10px] overflow-hidden">
                                     <Image
                                         src="/assets/banner/b3cb7acb1dd04f573ae4eff93409fc06.png"
