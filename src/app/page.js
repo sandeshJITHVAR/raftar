@@ -11,7 +11,8 @@ export default function Home() {
   return (
     <main className="">
       {/* <HeroSection /> */}
-      <WebStories banner={true} />
+      {/* <WebStories banner={true} /> */}
+      <Categaroy />
       {/* <Categaroy />
       <VideosStories1 />
       <Bollywood />
