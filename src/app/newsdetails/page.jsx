@@ -4,7 +4,6 @@ import Section from '@/component/section';
 import Image from 'next/image';
 import Link from 'next/link';
 import Banner from '@/section/comon/Banner';
-import Button from '@/component/button';
 import NextStories from '@/section/autherprofile/NextStories';
 import { IoEyeOutline } from "react-icons/io5";
 import { FaRegCalendar } from "react-icons/fa";
@@ -17,6 +16,7 @@ import { FaQuoteRight } from "react-icons/fa";
 import RightSide from '@/section/news-details/RightSide';
 import Comments from '@/section/autherprofile/Comments';
 import { LuMoveLeft, LuMoveRight } from "react-icons/lu";
+import Button from '@/component/button';
 
 export default function page() {
 
