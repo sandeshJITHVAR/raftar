@@ -1,4 +1,4 @@
-import Banner from '@/section-components/Banner'
+import Banner from '@/section/comon/Banner'
 import Image from 'next/image'
 import React from 'react'
 

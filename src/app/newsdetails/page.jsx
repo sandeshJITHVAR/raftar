@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Section from '@/component/section';
 import Image from 'next/image';
 import Link from 'next/link';
-import Banner from '@/section-components/Banner';
+import Banner from '@/section/comon/Banner';
 import Button from '@/component/button';
 import NextStories from '@/section/autherprofile/NextStories';
 import { IoEyeOutline } from "react-icons/io5";

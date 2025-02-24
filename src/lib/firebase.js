@@ -33,4 +33,4 @@ if (typeof window !== 'undefined') {
   messaging = getMessaging(app);
 }
 
-export { auth, analytics, messaging };
+export { app, auth, analytics, messaging };

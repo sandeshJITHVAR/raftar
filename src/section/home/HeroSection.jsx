@@ -62,6 +62,7 @@ export default function HeroSection() {
                                     src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                     alt="banner"
                                     className="w-full md:h-[295px] aspect-w-16 aspect-h-9  object-cover "
+                                    priority
                                 />
                             </div>
 
@@ -73,6 +74,7 @@ export default function HeroSection() {
                                         src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
                                         alt="banner"
                                         className="w-full md:h-[144px] aspect-w-16 aspect-h-9 object-cover"
+                                        priority
                                     />
                                     <div className="flex-1">
                                         <Link href='/newsdetails'>

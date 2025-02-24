@@ -11,6 +11,7 @@ export default function SmallNewCards({ image, title, date, author, }) {
                 src={image}
                 alt="banner"
                 className="w-[128px] md:h-[72px] aspect-w-16 aspect-h-9  object-cover"
+                priority
             />
             <div className="pl-2">
                 <h3 className='text-sm md:text-base font-semibold md:leading-[21.79px] tracking-wide'>
