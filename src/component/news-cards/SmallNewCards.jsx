@@ -4,14 +4,16 @@ import React from 'react'
 export default function SmallNewCards({image, title, date, author,}) {
     return (
             <div className="flex cursor-pointer pb-3 h-full  border-b border-tertiary/50" >
+                <div className="aspect-w-16 aspect-h-9">
                 <Image
                     height={199}
                     width={199}
                     src={image}
                     alt="banner"
-                    className="w-[128px] h-[72px] object-cover
-                      "
+                    className="w-[128px]  object-cover"
                 />
+                </div>
+                
                 <div className="pl-2">
                     <h2 className='text-base font-semibold leading-[21.79px] tracking-wide'>{title}</h2>
                     <div className="flex items-center gap-1 mt-2  text-xs text-gray-500">

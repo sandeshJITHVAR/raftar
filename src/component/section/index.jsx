@@ -1,3 +1,4 @@
+import Banner from '@/section-components/Banner'
 import Image from 'next/image'
 import React from 'react'
 
@@ -6,26 +7,17 @@ export default function Section({ children, bgcolor, banner , border }) {
         <>
             <section className={`${border ? 'border-t border-tertiary/50':''}`} >
                 <div style={{ backgroundColor: `${bgcolor}` }}>
-                    <div className='max-w-[80rem] px-4 md:px-6 lg:px-8  mx-auto'>
-                        <div className='py-8 ' >
+                    <div className='max-w-[80rem] px-4 md:px-6 lg:px-8 py-8   mx-auto'>
                             {children}
-                        </div>
                     </div>
                 </div>
                 {
                     banner && (
-                        <div className='py-3 px-4 md:px-6 lg:px-8 flex justify-center max-w-6xl mx-auto'>
-                        <Image
-                            src='/assets/banner/103f61951fbc29bc7558c8eda8f86084.jpg'
-                            alt='banner'
-                            className="w-[728px] h-[95px]  object-cover"
-                            width={200}
-                            height={100}
-                            priority />
-                    </div>
+                        <div className='py-3 px-4 md:px-6 lg:px-8 max-w-6xl mx-auto'>
+                            <Banner />
+                        </div>
                     )
                 }
-               
             </section>
         </>
     )

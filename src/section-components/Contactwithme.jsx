@@ -2,6 +2,7 @@ import Button from '@/component/button'
 import TitleTag from '@/component/titletag'
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+import SubScribeFrom from './SubScribeFrom';
 
 export default function Contactwithme() {
 
@@ -31,7 +32,7 @@ export default function Contactwithme() {
             bgColor: 'bg-[#1DA1F2]'
         }
     ];
-    
+
     return (
         <div className='flex flex-col gap-y-6   '>
             <div className='flex flex-col gap-y-4'>
@@ -39,7 +40,7 @@ export default function Contactwithme() {
                     <TitleTag title="Connect With Us" />
                 </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-7'>
                 <div className="h-fit grid grid-cols-2  gap-y-4 gap-x-3">
                     {socialStats.map((stat, index) => (
                         <div key={index} className="flex items-center gap-2.5">
@@ -54,22 +55,7 @@ export default function Contactwithme() {
                     ))}
 
                 </div>
-                <div className="bg-[#F2F2F2] flex flex-col gap-2.5 px-4 py-5 ">
-                    <h2 className="text-lg font-bold">Subscribe To Updates</h2>
-                    <p className=" text-xs">
-                        Never miss a breaking story! Get daily updates on business, politics,
-                        education, and more—straight to your inbox
-                    </p>
-
-                    <input
-                        type="email"
-                        placeholder="Email address"
-                        className="w-full py-3 px-4 text-xs placeholder:text-[#707070D4] bg-white  focus:outline-none focus:ring-0 "
-                    />
-                    <button>
-                        <Button title='Subscribe' widithfull={true} />
-                    </button>
-                </div>
+                <SubScribeFrom />
             </div>
         </div>
     )

@@ -1,11 +1,16 @@
+"use client"
+import { useState } from "react";
+import Image from "next/image";
 import H2 from '@/component/h2'
 import Section from '@/component/section'
 import Span from '@/component/span'
 import TitleTag from '@/component/titletag'
-import Image from 'next/image'
 import React from 'react'
 
 export default function CityNews() {
+    const cities = ["Uttar-Pradesh", "Jharkhand", "Bihar", "Madhya-Pradesh", "Delhi"];
+    const [activeCity, setActiveCity] = useState(cities[0]);
+
 
     const newsData = [
         {
@@ -41,19 +46,22 @@ export default function CityNews() {
             <Section  border={true}>
                 <div className='grid grid-cols-12 gap-y-6  gap-x-[10px]'>
                     <div className=' col-span-12 lg:col-span-9'>
-                        <div className="flex justify-between items-center border-b   border-tertiary/50">
+                        <div className="flex justify-between items-center border-b  gap-2 border-tertiary/50">
                             <TitleTag title="Web Stories" />
-                            <div className="pr-3  gap-7 text-base hidden lg:flex">
-                                <h1>Utter-Pradesh</h1>
-                                <h1>Jharkand</h1>
-                                <h1>Bihar</h1>
-                                <h1>Madhya-Pradesh</h1>
-                                <h1>Delhi</h1>
+                            <div className="pr-3 gap-2 lg:gap-7 text-base hidden xl:flex">
+                                {cities.map((city) => (
+                                    <h1
+                                        key={city}
+                                        className={`cursor-pointer text-lg ${activeCity === city ? "text-red-500 " : "text-black"
+                                            }`}
+                                        onClick={() => setActiveCity(city)}
+                                    >
+                                        {city}
+                                    </h1>
+                                ))}
                             </div>
                         </div>
                         <div className="grid grid-cols-1 xl:grid-cols-3 mt-7 gap-y-4 xl:gap-x-[10px]">
-
-
                             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-y-3 md:gap-y-8 gap-x-[10px]">
                                 {[1, 2,].map((items, index) => (
                                     <div

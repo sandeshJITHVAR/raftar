@@ -1,13 +1,11 @@
-import H2 from '@/component/h2'
 import SmallNewCards from '@/component/news-cards/SmallNewCards'
 import Section from '@/component/section'
-import Span from '@/component/span'
 import TitleTag from '@/component/titletag'
+import SocialMediaOften from '@/section-components/SocialMediaOften'
+import SubScribeFrom from '@/section-components/SubScribeFrom'
 import Image from 'next/image'
 import React from 'react'
 import { FaRegCirclePlay } from "react-icons/fa6";
-import { FaThumbsUp } from "react-icons/fa6";
-import { FaThumbsDown } from "react-icons/fa6";
 
 export default function VideoNews2() {
     return (
@@ -23,7 +21,6 @@ export default function VideoNews2() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2  gap-x-3 gap-y-3 mt-5">
-
                             <div className='flex flex-col h-fit  gap-y-3'>
                                 <div className="">
                                     <div className="relative">
@@ -48,7 +45,6 @@ export default function VideoNews2() {
                                         Inside Kumbh Mela – A Spiritual Journey
                                     </h1>
                                 </div>
-
                                 {[1, 2,].map((_, index) => (
                                     <SmallNewCards
                                         key={index} // Keep key here, not inside the component
@@ -76,44 +72,13 @@ export default function VideoNews2() {
 
                     <div className=' col-span-12 lg:col-span-3 flex flex-col gap-y-6'>
                         <div className='flex flex-col gap-y-2'>
-                            <h1 className='text-base font-fold' style={{ fontFamily: 'Merriweather' }}>Do you use social media often?</h1>
+                            <h1 className='text-lg font-fold' style={{ fontFamily: 'Merriweather' }}>Do you use social media often?</h1>
                             <hr className=" h-[2px] w-full  bg-secondary " />
                         </div>
 
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-y-6 gap-x-4'>
-                            <div className="flex flex-col gap-y-[6px]">
-                                <div className='py-3 px-4 border border-tertiary/50 flex items-center gap-2.5'>
-                                    <span><FaThumbsUp /></span>
-                                    <h1 className='text-xs font-medium'>Yes</h1>
-                                </div>
-
-                                <div className='py-3 px-4 border border-tertiary/50 flex items-center gap-2.5'>
-                                    <span><FaThumbsDown /></span>
-                                    <h1 className='text-xs font-medium'>No</h1>
-                                </div>
-
-                                <div className='py-2 px-4 border border-tertiary/50 flex items-center gap-2.5'>
-                                    <span>🙄</span>
-                                    <h1 className='text-xs font-medium'>I'm Not Sure</h1>
-                                </div>
-                            </div>
-
-                            <div className="bg-[#F2F2F2] flex flex-col gap-2.5 px-4 py-5 ">
-                                <h2 className="text-lg font-bold">Subscribe To Updates</h2>
-                                <p className=" text-xs">
-                                    Never miss a breaking story! Get daily updates on business, politics,
-                                    education, and more—straight to your inbox
-                                </p>
-
-                                <input
-                                    type="email"
-                                    placeholder="Email address"
-                                    className="w-full py-3 px-4 text-xs placeholder:text-[#707070D4] bg-white  focus:outline-none focus:ring-0 "
-                                />
-                                <button className="w-full bg-primary text-white py-3 text-xs  transition duration-200">
-                                    Subscribe
-                                </button>
-                            </div>
+                            <SocialMediaOften />
+                            <SubScribeFrom />
                         </div>
                     </div>
                 </div>

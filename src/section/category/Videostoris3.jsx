@@ -3,6 +3,7 @@ import H2 from '@/component/h2'
 import Section from '@/component/section'
 import Span from '@/component/span'
 import TitleTag from '@/component/titletag'
+import Advertis from '@/section-components/Advertis'
 import Image from 'next/image'
 import React from 'react'
 import { FaRegCirclePlay } from "react-icons/fa6";
@@ -46,13 +47,7 @@ export default function Videostoris3() {
                     </div>
 
                     <div className=' col-span-12 lg:col-span-3 lg:px-1.5'>
-                        <Image
-                            height={199}
-                            width={199}
-                            src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png"
-                            alt="banner"
-                            className="w-full h-[500px] object-cover"
-                        />
+                        <Advertis big={true} />
                     </div>
                 </div>
             </Section>

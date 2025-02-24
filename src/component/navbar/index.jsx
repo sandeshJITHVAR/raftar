@@ -1,10 +1,11 @@
 "use client"
 import { useState } from 'react';
+import { useAuth } from '@/lib/AuthProvider';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaWhatsapp, FaInstagram, } from 'react-icons/fa';
 import { BiMenu, BiSearch } from 'react-icons/bi';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { SlSocialFacebook } from "react-icons/sl";
 import { FiPhoneCall } from "react-icons/fi";
 import { CgMail } from "react-icons/cg";
@@ -13,7 +14,11 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 
 
 
+
 export default function Navbar() {
+  const { user, logout } = useAuth();
+  const [showDropdown, setShowDropdown] = useState(false);
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const currentPath = usePathname();
 
@@ -74,10 +79,10 @@ export default function Navbar() {
 
       <div className=' grid grid-cols-12 gap-4 py-4  px-4 md:px-6 lg:px-8 xl:px-0 max-w-[1440px] mx-auto'>
         <div className=' col-span-12 md:col-span-5 flex items-center '>
-            <h1 className='text-primary text-[32px] font-bold flex gap-2.5'>
+          <Link href="/" className='text-primary text-[32px] font-bold flex gap-2.5'>
             Highlands
             <span className="text-black" style={{ fontFamily: 'Merriweather' }}>Today</span>
-            </h1>
+          </Link>
         </div>
 
         <div className='col-span-7 h-full hidden md:flex items-center '>
@@ -109,6 +114,29 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center  gap-2">
+
+
+            <div>
+              {user ? (
+          
+                      <button
+                        onClick={logout}
+                        className="text-base  py-3 px-4"
+                      >
+                        Logout
+                      </button>
+  
+              ) : (
+                <Link
+                  href="/login"
+                  className=" text-base  py-3 px-4"
+                >
+                  Login
+                </Link>
+              )}
+            </div>
+
+
             <Link href="/" className='hover:opacity-80 border-l text-xl border-[#FFFFFFD4]/60 py-3.5 px-3'>
               <IoMdNotificationsOutline />
             </Link>
@@ -117,9 +145,9 @@ export default function Navbar() {
               <BiSearch className="text-xl cursor-pointer hover:opacity-80" />
             </Link>
 
-            <buuton className='hidden md:flex hover:opacity-80 m border-l text-2xl border-[#FFFFFFD4]/80 py-3.5 px-3'>
+            <button className='hidden md:flex hover:opacity-80 m border-l text-2xl border-[#FFFFFFD4]/80 py-3.5 px-3'>
               <BiMenu />
-            </buuton>
+            </button>
 
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

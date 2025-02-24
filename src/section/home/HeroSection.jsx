@@ -2,6 +2,7 @@ import H2 from '@/component/h2';
 import SmallNewCards from '@/component/news-cards/SmallNewCards';
 import Section from '@/component/section';
 import Span from '@/component/span';
+import LatestNews from '@/section-components/LatestNews';
 import Image from 'next/image';
 import React from 'react';
 import { LuPenLine } from "react-icons/lu";
@@ -9,32 +10,7 @@ import { LuCalendar } from "react-icons/lu";
 
 export default function HeroSection() {
 
-    const newsData = [
-        {
-            id: 1,
-            title: "India's GDP Growth Hits Record High",
-            date: "17th Feb, 2025",
-            author: "Rajesh Sharma",
-        },
-        {
-            id: 2,
-            title: "Lok Sabha Elections: Voter Turnout Surges",
-            date: "17th Feb, 2025",
-            author: "Priya Mehta",
-        },
-        {
-            id: 3,
-            title: "ISRO Launches New Space Mission",
-            date: "17th Feb, 2025",
-            author: "Ankit Verma",
-        },
-        {
-            id: 4,
-            title: "Cricket: India Defeats Australia In Final",
-            date: "17th Feb, 2025",
-            author: "Rajesh Sharma",
-        },
-    ];
+  
 
     return (
         <>
@@ -121,42 +97,8 @@ export default function HeroSection() {
                         </div>
                     </div>
 
-                    <div className='col-span-12 lg:col-span-3 flex flex-col gap-y-8 w-full'>
-                        <div className='flex flex-col gap-y-6'>
-                            <div className='flex flex-col gap-y-3'>
-                                <h2 className="text-primary font-bold text-2xl" style={{ fontFamily: 'Merriweather' }}>
-                                    Latest News <span className="text-black">Now</span>
-                                </h2>
-                                <hr className="border-t-2  border-secondary " />
-                            </div>
-                            <div className="w-full">
-                                <Image
-                                    src="/assets/banner/b36149120248eaf2d18f1cdb91815095.png" // Replace with actual image URL
-                                    alt="News Highlight"
-                                    width={500}
-                                    height={300}
-                                    className="h-[250px] w-full object-cover"
-                                />
-                            </div>
-                        </div>
-
-
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-y-4">
-                            {newsData.map((news, index) => (
-                                <li key={news.id} className="">
-                                    <div className='flex gap-4 '>
-                                        <span className="text-gray-500 font-bold italic text-xl">
-                                            {String(index + 1).padStart(2, "0")}
-                                        </span>
-                                        <H2 text={news.title} />
-                                    </div>
-                                    <div className="flex items-center gap-2 mt-2 text-xs text-gray-500">
-                                        <div className='w-9 h-[1px] bg-gray-500 ' />
-                                        <Span text="17th Feb, 2025, Rajesh Sharma" />
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
+                    <div className='col-span-12 lg:col-span-3'>
+                        <LatestNews />
                     </div>
                 </div>
             </Section>
